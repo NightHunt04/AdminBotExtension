@@ -1,0 +1,10 @@
+{
+    "manifest_version": 2,
+    "name": "AdminBot",
+    "version": "0.0.1",
+    "description": "Chat with Admin",
+    "permissions": ["activeTab"],
+    "browser_action": {
+        "default_popup": "popup.html"
+    }
+}

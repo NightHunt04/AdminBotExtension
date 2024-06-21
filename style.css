@@ -1,0 +1,122 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.main {
+    width: 500px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    position: relative;
+    background: #2a2a2a;
+    color: aliceblue;
+}
+
+.title {
+    font-size: 15px;
+    font-weight: 500;
+    padding-top: 10px;
+    width: 500px;
+    text-align: center;
+    border-bottom: 0.5px solid #424242;
+    padding-bottom: 10px;
+}
+
+.bot {
+    color: #ff1212;
+    font-weight: bold;
+}
+
+.chat::-webkit-scrollbar {
+    width: 2px;
+}
+
+.chat::-webkit-scrollbar-thumb {
+    background: #888888;
+    border-radius: 4px;
+}
+
+.chat {
+    height: 90%;
+    overflow-y: auto;
+    scroll-behavior: auto;
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+    align-items: start;
+    width: 450px;
+    height: 90%;
+    font-size: 14px;
+    padding: 8px 10px;
+}
+
+.inputs {
+    width: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 0.5px solid #484848;
+    margin-bottom: 9px;
+    border-radius: 13px;
+}
+
+input {
+    width: 90%;
+    padding: 5px 8px;
+    outline: none;
+    background: transparent;
+    border: none;
+    color: aliceblue;
+    font-size: 14px;
+}
+
+.send_btn {
+    width: 10%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: rgb(220, 220, 220);
+    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
+    padding: 3px 3px;
+}
+
+.send_btn:hover {
+    background: #525252;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 2px;
+}
+
+.admin {
+    padding: 6px;
+    margin: 2px;
+    border: 0.5px solid #4f4f4f;
+    border-radius: 14px;
+    margin-bottom: 20px;
+}
+
+.user i {
+    font-size: 12px;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 13px;
+    margin-top: 60px;
+    opacity: 85%;
+}
