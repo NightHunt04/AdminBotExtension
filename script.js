@@ -4,6 +4,8 @@ senBtn = document.querySelector('.send_btn'),
 adminImage = document.querySelector('.adminImg'),
 main = document.querySelector('.main')
 
+inp.focus()
+
 function addAdminMessage(message) {
     const admin = document.createElement('div')
     admin.className = 'admin'
@@ -17,6 +19,21 @@ function addAdminMessage(message) {
     dum.className = 'dum'
 
     chatSection.appendChild(admin)
+    chatSection.appendChild(dum)
+    dum.scrollIntoView(true)
+}
+
+function fireImage(prompt) {
+    let prompt_ = prompt.replace('img', '')
+    prompt_ = prompt_.replace(/\s+/g, "")
+    const generatedImage = document.createElement('img')
+    generatedImage.src = `https://image.pollinations.ai/prompt/${prompt_}`
+    generatedImage.className = 'gen'
+
+    const dum = document.createElement('div')
+    dum.className = 'dum'
+
+    chatSection.appendChild(generatedImage)
     chatSection.appendChild(dum)
     dum.scrollIntoView(true)
 }
@@ -70,7 +87,11 @@ function addUserMessage() {
         first = true
     }
 
-    firePrompt(prompt)
+    if(prompt.includes('img'))
+        fireImage(prompt)
+    else
+        firePrompt(prompt)
+
 }
 
 inp.addEventListener('keydown', function(e){
