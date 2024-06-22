@@ -27,7 +27,10 @@ function fireImage(prompt) {
     let prompt_ = prompt.replace('img', '')
     prompt_ = prompt_.replace(/\s+/g, "")
     const generatedImage = document.createElement('img')
-    generatedImage.src = `https://image.pollinations.ai/prompt/${prompt_}`
+
+    const random = Math.floor(Math.random() * (9999 - 1)) + 1
+
+    generatedImage.src = `https://image.pollinations.ai/prompt/${prompt_}?nologo=poll&nofeed=yes&seed=${random}`
     generatedImage.className = 'gen'
 
     const dum = document.createElement('div')
