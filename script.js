@@ -1,8 +1,8 @@
 const inp = document.querySelector('.prompt'),
 chatSection = document.querySelector('.chat'),
 senBtn = document.querySelector('.send_btn'),
-adminImage = document.querySelector('.adminImg'),
-main = document.querySelector('.main')
+main = document.querySelector('.main'),
+instruct = document.querySelector('.instruct')
 
 inp.focus()
 
@@ -86,7 +86,7 @@ function addUserMessage() {
     inp.value = ''
 
     if(!first) {
-        main.removeChild(adminImage)
+        main.removeChild(instruct)
         first = true
     }
 
