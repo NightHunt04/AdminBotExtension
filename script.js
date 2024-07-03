@@ -60,6 +60,47 @@ async function firePrompt(prompt) {
     .catch(err => console.error(err))
 }
 
+async function firePrompt2(prompt) {
+    // const url = 'https://ai-ml-api2.p.rapidapi.com/completion';
+    // const options = {
+    //     method: 'POST',
+    //     headers: {
+    //         'x-rapidapi-key': '7264c0698emsh8e04d51884fb66ep1a08f0jsnd21ad7509f71',
+    //         'x-rapidapi-host': 'ai-ml-api2.p.rapidapi.com',
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({
+    //         model: 'mistralai/Mistral-7B-Instruct-v0.1',
+    //         message: prompt,
+    //         prompt: 'You are helpful assistant.'
+    //     })
+    // };
+
+    // fetch(url, options)
+    // .then(response => response.json())
+    // .then(data => addAdminMessage(data.completion.choices[0].message.content.trim()))
+    // .catch(err => console.error(err))
+
+    const url = 'https://brigid-ai.p.rapidapi.com/v2';
+    const options = {
+        method: 'POST',
+        headers: {
+            'x-rapidapi-key': '7264c0698emsh8e04d51884fb66ep1a08f0jsnd21ad7509f71',
+            'x-rapidapi-host': 'brigid-ai.p.rapidapi.com',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            text: prompt,
+            force_transliteration: 'false',
+            web_search: 'true'
+        })
+    }
+
+    fetch(url, options)
+    .then(response => response.json())
+    .then(data => addAdminMessage(data.llm_output))
+}
+
 let first = false
 
 function addUserMessage() {
@@ -93,7 +134,7 @@ function addUserMessage() {
     if(prompt.includes('img'))
         fireImage(prompt)
     else
-        firePrompt(prompt)
+        firePrompt2(prompt)
 
 }
 
